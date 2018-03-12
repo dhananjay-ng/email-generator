@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
+ 
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+            <div class="container-fluid">
+
+                    <h1>Email Generator</h1>
+                    <p>Add a default domain name to any addresses that don't already have one.  You can enter them below and if they don't already have a domain, the one you specify as the default extension will be added</p>
+                    Default Extension
+                    <div class="form-group has-success has-feedback">
+                            <label class="control-label" for="inputGroupSuccess1">Input group with success</label>
+                            <div class="input-group">
+                              <span class="input-group-addon">@</span>
+                              <input type="text" class="form-control" id="extension" aria-describedby="inputGroupSuccess1Status">
+                            </div>
+                            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                            <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+                          </div>
+                          <label class="control-label" for="inputGroupSuccess1">Address</label>
+                          <div class="form-group">
+                                <div class="">
+                                  <div class="textarea">
+                                  
+                                        <textarea id="input" style="min-height: 300px;width:400px"  placeholder="enter addresses one per line..."></textarea>                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                      <button id="generate" type="button" class="btn btn-success">Generate</button>
+              
+            </div>
+
+  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+      document.getElementById('generate').addEventListener('click',function(){
+            var extension=document.getElementById('extension').value || 'gmail.com';
+            var input=document.getElementById('input').value;
+            document.getElementById('input').value=input.replace(/^([^\@\n\r]+)$/gm, '$1@' + extension);
+      },false);
+  </script>
+
+</body>
+</html>
